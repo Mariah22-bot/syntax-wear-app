@@ -6,12 +6,12 @@ import IconCart from '@/assets/images/icon-cart.png';
 export const Header = () => {
     return (
         <div className="relative">
-            <header className='fixed bg-amber-700 top-0 left-0 right-0 z-10 mx-10'>
-                <div className=' bg-white max-w-330 mx-auto flex justify-between items-center py-5 px-7 rounded-2xl mt-5'>
-                    <img src={Logo} alt="Logo SyntaxWear" className='w-32 md:w-36'/>
+            <header className='fixed top-10 left-0 right-0 z-8 mx-8'>
+                <div className=' bg-white max-w-264 mx-auto flex justify-between items-center py-3 px-4 rounded-xl mt-4'>
+                    <img src={Logo} alt="Logo SyntaxWear" className='w-25.6 md:w-28.8' />
 
                     <nav className='hidden min-[768px]:block'>
-                        <ul className='flex gap-10'>
+                        <ul className='flex gap-8'>
                             <li><a href="#">Masculino</a></li>
                             <li><a href="#">Feminino</a></li>
                             <li><a href="#">Outlet</a></li>
@@ -19,7 +19,7 @@ export const Header = () => {
                     </nav>
 
                     <nav>
-                        <ul className='flex gap-4 md:gap-10'> 
+                        <ul className='flex gap-3.2 md:gap-8'>
                             <li className='hidden min-[768px]:block'>
                                 <a href="#">Nossas lojas</a>
                             </li>
