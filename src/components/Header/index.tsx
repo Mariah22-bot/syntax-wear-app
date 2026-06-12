@@ -2,6 +2,7 @@ import Logo from "@/assets/images/logo.png";
 import IconUser from "@/assets/images/icon-user.png";
 import IconAbout from "@/assets/images/icon-about.png";
 import { Link } from "@tanstack/react-router";
+import { ShoppingCart } from "../Shoppingcart";
 
 export const Header = () => {
     return (
@@ -43,6 +44,13 @@ export const Header = () => {
                                 <a href="#">
                                     <img src={IconAbout} alt="Ícone de sobre" />
                                 </a>
+                            </li>
+                            <li>
+                                {/* <a href="#">
+                                    <img src="IconCart" alt="Ícone de carrinho" />
+                                </a> */}
+
+                                <ShoppingCart />
                             </li>
 
                         </ul>
