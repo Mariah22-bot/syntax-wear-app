@@ -1,21 +1,34 @@
-// Importação das funcionalidades do TanStack Router para gerenciamento de rotas
-import { RouterProvider, createRouter } from "@tanstack/react-router"
-// Importação da árvore de rotas gerada automaticamente
-import { routeTree } from "./router-tree-gen";
+// --- Configuração do Roteador (Não utilizada neste arquivo) ---
+// As linhas abaixo preparam o sistema de rotas, mas o roteador não é ativado aqui.
+// A ativação provavelmente acontece em `src/main.tsx`.
 
-// Criação da instância do roteador utilizando a árvore de rotas
+// Importa as funções necessárias da biblioteca de roteamento TanStack Router.
+import { RouterProvider, createRouter } from "@tanstack/react-router";
+// Importa a "árvore de rotas", um arquivo gerado automaticamente que lista todas as páginas do app.
+import { routeTree } from "./router-tree-gen";
+import { CartProvider } from "./contexts/CartProvider";
+
+// Cria a instância do roteador, passando a lista de todas as rotas disponíveis.
 const router = createRouter({ routeTree });
 
-// Registro do roteador no módulo do TanStack Router para garantir tipagem completa (TypeScript)
+// Bloco de declaração de tipos para o TypeScript.
+// Isso ajuda o editor de código a entender o nosso roteador, oferecendo
+// sugestões melhores e verificação de erros (type safety).
 declare module "@tanstack/react-router" {
   interface Register {
     router: typeof router;
   }
 }
 
+// --- Componente Principal da Página ---
+// Este componente `App` monta a estrutura da página principal (homepage).
 function App() {
-  return <RouterProvider router={router} />
+  return (
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
+  );
 }
 
+// Exporta o componente `App` para que ele possa ser usado em outras partes do projeto.
 export default App;
-
